@@ -1,17 +1,17 @@
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class DataCats {
+public class DataCat {
     private String id;
     private String text;
     private String type;
     private String user;
-    private String upvotes;
+    private int upvotes;
 
-    public DataCats(@JsonProperty("id") String id,
-                    @JsonProperty("text") String text,
-                    @JsonProperty("type") String type,
-                    @JsonProperty("user") String user,
-                    @JsonProperty("upvotes") String upvotes) {
+    public DataCat(@JsonProperty("id") String id,
+                   @JsonProperty("text") String text,
+                   @JsonProperty("type") String type,
+                   @JsonProperty("user") String user,
+                   @JsonProperty("upvotes") int upvotes) {
 
         this.id = id;
         this.text = text;
@@ -20,7 +20,7 @@ public class DataCats {
         this.upvotes = upvotes;
     }
 
-    public String getUpvotes() {
+    public int getUpvotes() {
         return upvotes;
     }
 

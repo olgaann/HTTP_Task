@@ -24,9 +24,9 @@ public class Main {
         }
 
         //Преобразуем строку json в список java-объектов:
-        List<DataCats> resultList;
+        List<DataCat> resultList;
         try {
-            resultList = JsonToDataCats.convert(json);
+            resultList = JsonToDataCat.convert(json);
         } catch (JsonProcessingException e) {
             throw new RuntimeException(e);
         }
@@ -34,8 +34,7 @@ public class Main {
         //Отфильтруем полученный список и выведем на экран:
         System.out.println("Вот факты, за которые кто-то проголосовал: ");
         resultList.stream()
-                .filter(dataCats -> dataCats.getUpvotes() != null)
-                .filter(dataCats -> !dataCats.getUpvotes().equals("0"))
+                .filter(dataCats -> dataCats.getUpvotes() != 0)
                 .forEach(System.out::println);
 
     }
